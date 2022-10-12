@@ -37,7 +37,7 @@ df_join = df_green_revenue_tmp.join(df_yellow_revenue_tmp, on=['hour', 'zone'], 
 df_result = df_join.join(df_zones, df_join.zone == df_zones.LocationID)
 ```
 
-## 5. Spark using Google Dataproc
+## 5. [Spark using Google Dataproc](https://github.com/AmanGuptAnalytics/Project-Four-Analysis-using-PySpark/blob/main/5.Using%20Dataproc.py)
 
 Dataproc is a managed Apache Spark and Apache Hadoop service that lets you take advantage of open source data tools for batch processing, querying, streaming, and machine learning. Dataproc automation helps you create clusters quickly, manage them easily, and save money by turning clusters off when you don't need them.
 
