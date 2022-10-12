@@ -23,32 +23,6 @@ To run the SQL queries in Spark do the following steps:
 +   The data frames are Joined by using UNION ALL
 +   And the following SQL queries
 
-```
-SELECT 
-    -- Reveneue grouping 
-    PULocationID AS revenue_zone,
-    date_trunc('month', pickup_datetime) AS revenue_month, 
-    service_type, 
-
-    -- Revenue calculation 
-    SUM(fare_amount) AS revenue_monthly_fare,
-    SUM(extra) AS revenue_monthly_extra,
-    SUM(mta_tax) AS revenue_monthly_mta_tax,
-    SUM(tip_amount) AS revenue_monthly_tip_amount,
-    SUM(tolls_amount) AS revenue_monthly_tolls_amount,
-    SUM(improvement_surcharge) AS revenue_monthly_improvement_surcharge,
-    SUM(total_amount) AS revenue_monthly_total_amount,
-    SUM(congestion_surcharge) AS revenue_monthly_congestion_surcharge,
-
-    -- Additional calculations
-    AVG(passenger_count) AS avg_montly_passenger_count,
-    AVG(trip_distance) AS avg_montly_trip_distance
-FROM
-    trips_data
-GROUP BY
-    1, 2, 3
-```
-
 ## 3. [Using Joins with Spark](https://github.com/AmanGuptAnalytics/Project-Four-Analysis-using-PySpark/blob/main/3.%20Grouping_by_joins.ipynb)
 
 The next thing we did is to join the data from two taxis i.e. Green and Yellow and then select the data pertaining to particular zones so we joined the combined data with zones table as given in query below. The Details of how this is done is given [here](https://github.com/AmanGuptAnalytics/Project-Four-Analysis-using-PySpark/blob/main/3.%20Grouping_by_joins.ipynb).
