@@ -36,3 +36,28 @@ df_join = df_green_revenue_tmp.join(df_yellow_revenue_tmp, on=['hour', 'zone'], 
 
 df_result = df_join.join(df_zones, df_join.zone == df_zones.LocationID)
 ```
+
+## 5. Spark using Google Dataproc
+
+Dataproc is a managed Apache Spark and Apache Hadoop service that lets you take advantage of open source data tools for batch processing, querying, streaming, and machine learning. Dataproc automation helps you create clusters quickly, manage them easily, and save money by turning clusters off when you don't need them.
+
+So basically it is a managed instance that allow you to run a Hadoop or Spark job on your data.
+
+#### **Steps involved** 
+
++   The jupter notebook script used was converted to [Python Script](https://github.com/AmanGuptAnalytics/Project-Four-Analysis-using-PySpark/blob/main/5.Using%20Dataproc.py) that can be used by Spark.
++   A dataproc cluster is made and the Python script is given as an input to dataproc with the arguments as defined in the script. Basically the Green or Yellow taxi and the year, of which data is required. 
++   The Cluster is run and a job is submitted with the following arguments.
+
+```
+  --input_green=gs://tez-bucket-spark/pq/green/2021/*/
+  --input_yellow=gs://tez-bucket-spark/pq/yellow/2021/*/
+  --output=gs://tez-b`ucket-spark/report-2021
+```
+The output of this job is writen as a parquet file having the result of the SQL query run. 
+
+The output of the dataproc job is as follows.
+
+![Dataproc](https://github.com/AmanGuptAnalytics/Project-Four-Analysis-using-PySpark/blob/main/Docs/Data%20Proc.png)
+
+This concludes the Project Four Data Analysis using Spark. 
