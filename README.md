@@ -1,4 +1,4 @@
-# Project-Four-Analysis-using-PySpark
+# Project-4: Analysis-using-PySpark
 The taxi data used in project three is ingested in this project and analyzed using Spark SQL, connecting Spark to the GCS bucket and Running the Spark job on Data proc.
 
 The modules used in this project are :
